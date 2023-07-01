@@ -1,0 +1,291 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  /*
+      Blue: hsl(207, 90%, 61%)
+      Purple: hsl(250, 66%, 75%)
+      Pink: hsl(356, 66%, 75%)
+      Teal: hsl(174, 63%, 62%)
+  */
+
+  --hue: 207;
+  --sat: 90%;
+  --lig: 61%;
+  --first-color: hsl(var(--hue), var(--sat), var(--lig));
+  --first-color-alt: hsl(var(--hue), var(--sat), 57%); /* -4% */
+  --title-color: hsl(var(--hue), 12%, 15%);
+  --text-color: hsl(var(--hue), 12%, 45%);
+  --text-color-light: hsl(var(--hue), 8%, 75%);
+  --text-color-lighten: hsl(var(--hue), 8%, 92%);
+  --body-color: hsl(var(--hue), 100%, 99%);
+  --container-color: #fff;
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: 'Poppins', sans-serif;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+}
+
+@media screen and (min-width: 968px) {
+  :root {
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+  transition: .3s; /* For animation dark mode */
+}
+
+h1, h2, h3 {
+  color: var(--title-color);
+  font-weight: 600;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== THEME ===============*/
+
+
+/*========== Variables Dark theme ==========*/
+
+
+/*========== 
+    Color changes in some parts of 
+    the website, in light theme
+==========*/
+
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 968px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+/*=============== PROFILE ===============*/
+.header{
+  position: relative;
+}
+
+.dark-mode{
+  font-size: 2em;
+  padding-block: 1em;
+  color: var(--title-color);
+  position: absolute;
+  right: 4em;
+  top: 0;
+}
+
+.profile{
+  margin-top: 15em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.profile__img{
+  margin: 1em auto;
+  border-radius: 50%;
+  border: 2px solid var(--first-color-alt);
+  display: flex;
+  align-items: center;
+}
+
+.profile__img-img{
+  width: 130px;
+  background-color: var(--first-color);
+  border-radius: 50%;
+  margin: .2em;
+}
+
+.profile__subtitle{
+  font-size: var(--smaller-font-size);
+  color: var(--text-color);
+}
+
+.profile__social{
+  font-size: 1.3em;
+  color: #000;
+  margin-top: 1em;
+}
+
+.profile__experence{
+  margin-top: 2em;
+  gap: 1em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile__experence-item{
+  flex: 1;
+}
+
+.profile__experence-title{
+  color: var(--title-color);
+  font-size: var(--h2-font-size);
+}
+
+.profile__contact{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2em;
+  margin-top: 2em;
+}
+
+.button{
+  padding: 1em 2em;
+  color: var(--container-color);
+  background-color: var(--first-color-alt);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.profile__contact-icons{
+  font-size: 1.5em;
+  color: var(--title-color);
+  display: flex;
+  gap: 1em;
+}
+
+.profile__contact-icons i{
+  background-color: #ddd;
+  border-radius: 5px;
+  padding: .5em;
+}
+
+/*=============== BUTTONS ===============*/
+
+
+/*=============== FILTERS TABS ===============*/
+.filter{
+  display: flex;
+  width: 50%;
+  margin: 8em auto 0;
+  background-color: #bbb;
+  padding: 1em;
+  gap: 1em;
+  border-radius: 10px;
+}
+
+.filter__category{
+  flex: 1;
+  background-color: var(--container-color);
+  border-radius: 10px;
+  text-align: center;
+  padding: 1em;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  color: var(--title-color);
+}
+
+/*=============== PROJECTS ===============*/
+.card-container{
+  width: 90%;
+  margin: 3em auto;
+  grid-template-columns: 260px;
+  justify-content: center;
+}
+
+.card__img{
+  border-radius: 10px;
+}
+
+/*=============== SKILLS ===============*/
+.skills-container{
+  width: 90%;
+  margin: 0 auto;
+  grid-template-columns: 260px;
+  justify-content: center;
+}
+
+.skills{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 4em;
+}
+
+.skills__category{
+  text-align: center;
+  flex: 0 0 100%;
+  margin-bottom: 1.5em;
+}
+
+.skills__item{
+  flex: 0 0 50%;
+}
+
+.skills__title{
+  color: var(--title-color);
+  margin-block: 1em .5em;
+}
+
+/* Hide and show projects & skills */
+
+
+/* Activate button filter */
+
+
+/*=============== FOOTER ===============*/
+
+
+/*=============== SCROLL BAR ===============*/
+
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+
+
+/* For medium devices */
+@media (min-width: 600px){
+  .card-container{
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .skills-container{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* For large devices */
